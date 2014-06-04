@@ -1,0 +1,21 @@
+<source>
+  type forward
+  port 4040
+  bind 127.0.0.1
+</source>
+
+<match **>
+  type copy
+  <store>
+    type stdout
+  </store>
+  <store>
+    type file
+    buffer_type file
+    path /tmp/lettuce/logs/
+    time_slice_format %Y%m%d%H%M
+    time_slice_wait 1m
+    time_format %Y%m%dT%H%M%S%z
+  </store>
+</match>
+

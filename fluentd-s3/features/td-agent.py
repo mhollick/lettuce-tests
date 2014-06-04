@@ -12,7 +12,7 @@ import ConfigParser
 @step('my configuration file is (\S+)')
 def s3_config(step, s3_config):
     #world.s3_key = str(s3_key)
-    config_file = './s3_fetch.ini'
+    config_file = s3_config
     Config = ConfigParser.ConfigParser()
     Config.read(config_file)
 
@@ -38,7 +38,7 @@ download_dest_base = ConfigSectionMap('TARGET')['download_dest_base']
 
 '''
 print '--------------------------------------------------------------------------------'
-print '                                Configuration  '
+print '                                Configuration                                   '
 print ' aws_key_id = ' + aws_key_id
 print ' aws_sec_key = ' + aws_sec_key
 print ' s3_endpoint = ' + s3_endpoint
